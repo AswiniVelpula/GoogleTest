@@ -1,24 +1,16 @@
 pipeline {
     agent any
 
- 
-
     stages {
         stage('Checkout') {
             steps {
-                git url: 'https://github.com/AswiniVelpula/GoogleTest.git', branch: 'main'
+                git branch: 'main', url: 'https://github.com/AswiniVelpula/GoogleTest.git'
             }
         }
-
- 
 
         stage('Build') {
             steps {
                 echo '🔧 Starting CMake Build...'
-
- 
-
-                // Run CMake and Make commands
                 sh '''
                     rm -rf build
                     mkdir -p build
@@ -26,6 +18,13 @@ pipeline {
                     cmake ..
                     make
                 '''
+            }
+        }
+
+        stage('Test') {
+            steps {
+                echo '🧪 Running Tests...'
+                sh './build/test_app'
             }
         }
     }
