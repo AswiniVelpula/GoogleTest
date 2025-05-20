@@ -1,6 +1,12 @@
 pipeline {
     agent any
     stages {
+        stages {
+        stage('Checkout') {
+            steps {
+                git branch: 'main', url: 'https://github.com/AswiniVelpula/GoogleTest.git'
+            }
+        }
         stage('Build') {
             steps {
                 sh '''
