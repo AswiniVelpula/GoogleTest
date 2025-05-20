@@ -1,0 +1,13 @@
+# ninja log v6
+49	338	1747722258272923700	CMakeFiles/Example.dir/Example.cpp.o	2e332d50c8fd57ec
+340	1557	1747722258563518600	libExample.a	179fc0b05eebe576
+92	4649	1747722258310670300	googletest/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o	921feb8f19b52f88
+168	4702	1747722258388781400	test/CMakeFiles/ExampleTests.dir/ExampleTest.cpp.o	72ca2682f5393cdb
+135	5668	1747722258357538100	googletest/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o	c5d5db8b942c1f21
+71	8493	1747722258288544300	googletest/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o	fa0fa23058ab5a75
+22	13816	1747722258241680600	googletest/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o	9e2fc0e0ad1dd263
+13818	14069	1747722272039653900	lib/libgtest.a	2592a9cecae68116
+14087	14255	1747722272309463000	lib/libgtest_main.a	975e8cb8408083eb
+14069	14273	1747722272293780400	lib/libgmock.a	c2c4c50ea5adcde8
+14273	14453	1747722272493733600	lib/libgmock_main.a	4a80bafbe083a348
+14255	14957	1747722272478089400	test/ExampleTests.exe	fa21903961e84f2c
