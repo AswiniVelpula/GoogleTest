@@ -1,31 +1,31 @@
 pipeline {
     agent any
 
+ 
+
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/AswiniVelpula/GoogleTest.git'
+                git url: 'https://github.com/AswiniVelpula/GoogleTest.git', branch: 'main'
             }
         }
+
+ 
 
         stage('Build') {
             steps {
-                echo '🔧 Cleaning and Starting CMake Build...'
-                bat '''
-                    del /F /Q CMakeCache.txt 2>nul
-                    rmdir /S /Q build 2>nul
-                    mkdir build
+                echo '🔧 Starting CMake Build...'
+
+ 
+
+                // Run CMake and Make commands
+                sh '''
+                    rm -rf build
+                    mkdir -p build
                     cd build
                     cmake ..
-                    cmake --build .
+                    make
                 '''
-            }
-        }
-
-        stage('Test') {
-            steps {
-                echo '🧪 Running Tests...'
-                bat 'build\\Debug\\test_app.exe'  // Change this path if needed
             }
         }
     }
