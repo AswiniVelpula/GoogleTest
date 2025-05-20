@@ -10,10 +10,10 @@ pipeline {
 
         stage('Build') {
             steps {
-                echo '🔧 Starting CMake Build...'
+                echo '🔧 Cleaning and Starting CMake Build...'
                 bat '''
-                    if exist CMakeCache.txt del CMakeCache.txt
-                    rmdir /S /Q build
+                    del /F /Q CMakeCache.txt 2>nul
+                    rmdir /S /Q build 2>nul
                     mkdir build
                     cd build
                     cmake ..
@@ -25,7 +25,7 @@ pipeline {
         stage('Test') {
             steps {
                 echo '🧪 Running Tests...'
-                bat 'build\\Debug\\test_app.exe' // adjust path if needed
+                bat 'build\\Debug\\test_app.exe'  // Change this path if needed
             }
         }
     }
