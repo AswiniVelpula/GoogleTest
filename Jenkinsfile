@@ -10,7 +10,8 @@ pipeline {
 
         stage('Build') {
             steps {
-                sh 'g++ -std=c++11 -isystem googletest/include -pthread *.cpp -o test_app'
+                sh 'g++ -std=c++11 -I googletest/include -pthread Example.cpp googletest/src/gtest_main.cc googletest/src/gtest-all.cc -o test_app
+'
             }
         }
 
