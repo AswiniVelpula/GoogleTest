@@ -18,7 +18,7 @@ pipeline {
         stage('Run Tests') {
             steps {
                 echo '🧪 Running unit tests...'
-                bat '''
+                sh '''
                     cd build\\test
                     ExampleTests.exe
                 '''
