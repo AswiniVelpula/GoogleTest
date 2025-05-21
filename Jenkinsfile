@@ -19,5 +19,14 @@ pipeline {
                 sh './test_app'
             }
         }
+        stage('Run Tests') {
+            steps {
+                echo '🧪 Running unit tests...'
+                bat '''
+                    cd build\\test
+                    ExampleTests.exe
+                '''
+            }
+        }
     }
 }
