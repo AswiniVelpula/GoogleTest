@@ -19,5 +19,10 @@ pipeline {
                 sh './test_app'
             }
         }
+        post {
+        always {
+            junit 'test_results.xml'
+        }
+    }
     }
 }
