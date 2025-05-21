@@ -20,7 +20,7 @@ pipeline {
                 echo '🧪 Running unit tests...'
                 sh '''
                     
-                    test/ExampleTests.exe
+                    build/test/ExampleTests.exe
                 '''
             }
         }
