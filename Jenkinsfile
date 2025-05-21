@@ -14,11 +14,7 @@ pipeline {
             }
         }
 
-        stage('Test') {
-            steps {
-                sh './test_app'
-            }
-        }
+        
         stage('Run Tests') {
             steps {
                 echo '🧪 Running unit tests...'
