@@ -22,10 +22,5 @@ pipeline {
         }
     }
 
-    post {
-        always {
-            echo '📄 Archiving test results...'
-            junit 'test_results.xml'
-        }
-    }
+    
 }
