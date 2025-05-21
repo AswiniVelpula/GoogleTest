@@ -19,7 +19,7 @@ pipeline {
             steps {
                 echo '🧪 Running unit tests...'
                 sh '''
-                    cd build\\test
+                    cd test
                     ExampleTests.exe
                 '''
             }
