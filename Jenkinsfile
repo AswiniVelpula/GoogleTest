@@ -10,19 +10,20 @@ pipeline {
 
         stage('Build') {
             steps {
-                sh 'g++ -std=c++11 -isystem googletest/include -pthread *.cpp -o test_app'
+                sh 'g++ -std=c++11 -isystem googletest/include -pthread *.cpp -lgtest -lgtest_main -o test_app'
             }
         }
 
         stage('Test') {
             steps {
-                sh './test_app'
+                sh './test_app --gtest_output=xml:test_results.xml'
             }
         }
-        post {
+    }
+
+    post {
         always {
             junit 'test_results.xml'
         }
-    }
     }
 }
