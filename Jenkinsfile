@@ -16,7 +16,7 @@ pipeline {
 
         stage('Test') {
             steps {
-                sh './ExampleTest'
+                sh './ExampleTests'
             }
         }
     }
