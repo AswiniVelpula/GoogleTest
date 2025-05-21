@@ -14,15 +14,18 @@ pipeline {
             }
         }
 
-        
         stage('Run Tests') {
             steps {
                 echo '🧪 Running unit tests...'
-                sh '''
-                    
-                    cd build/test/ExampleTests.exe
-                '''
+                sh './test_app --gtest_output=xml:test_results.xml'
             }
+        }
+    }
+
+    post {
+        always {
+            echo '📄 Archiving test results...'
+            junit 'test_results.xml'
         }
     }
 }
